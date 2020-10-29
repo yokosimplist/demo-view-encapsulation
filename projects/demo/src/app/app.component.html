@@ -1,0 +1,31 @@
+<button (click)="toggleDefault()"><span *ngIf="!showDefault">show</span> <span *ngIf="showDefault">hide</span>
+  parent default</button>
+  <button (click)="toggleDefaultChild()"><span *ngIf="!showDefaultChild">show</span> <span *ngIf="showDefaultChild">hide</span>
+    child default</button>
+<button (click)="toggleNone()"><span *ngIf="!showNone">show</span> <span *ngIf="showNone">hide</span>
+  parent none</button>
+  <button (click)="toggleNoneChild()"><span *ngIf="!showNoneChild">show</span> <span *ngIf="showNoneChild">hide</span>
+    child none</button>
+<div>
+  <h2>button's background color key:</h2>
+
+  <p>black - styles.scss (Global)</p>
+  <p>blue - Emulated parent</p>
+  <p>light blue - Emulated child</p>
+  <p>purple - None parent</p>
+  <p>lightpink - None child</p>
+  <p>purple - page-view-none.component.scss (ViewEncapsulation.None)</p>
+</div>
+
+<div class="demo">
+  <app-view-encapsulation-default *ngIf="showDefault" class="example"></app-view-encapsulation-default>
+
+  <app-view-encapsulation-none *ngIf="showNone" class="example"></app-view-encapsulation-none>
+</div>
+
+<div class="demo">
+  <app-child-default *ngIf="showDefaultChild" class="example"></app-child-default>
+
+  <app-child-none *ngIf="showNoneChild" class="example"></app-child-none>
+</div>
+
